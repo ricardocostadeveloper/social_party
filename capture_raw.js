@@ -99,8 +99,8 @@ server.listen(5189, async () => {
     await page.goto('http://localhost:5189', { waitUntil: 'networkidle0' });
     await new Promise(r => setTimeout(r, 800));
     
-    // Click "Eu Vou" on first two cards
-    const goingButtons = await page.$$('.btn-going');
+    // Click "Eu Vou" on first two cards (.going-btn)
+    const goingButtons = await page.$$('.going-btn');
     if (goingButtons.length > 0) {
       await goingButtons[0].click();
       await new Promise(r => setTimeout(r, 400));
